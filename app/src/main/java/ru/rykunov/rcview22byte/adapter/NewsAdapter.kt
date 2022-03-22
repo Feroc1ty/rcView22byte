@@ -27,6 +27,7 @@ class NewsAdapter(mainActivity: MainActivity) : RecyclerView.Adapter<NewsAdapter
             .into(holder.binding.imAvatar)
         holder.binding.tvTitle.setText(newsList[position].title)
         holder.binding.tvDescription.setText(newsList[position].description)
+        holder.binding.tvTest.setText(newsList[position].urlToImage)
 
         holder.binding.newsCard.setOnClickListener {
             onItemClick.invoke(newsList[position])
