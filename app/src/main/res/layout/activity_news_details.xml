@@ -32,15 +32,21 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Title"
+        android:layout_margin="10dp"
+        android:shadowColor="#000000"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="14"
+        android:text="Seth Davis' 16 questions for the Sweet 16 - The Athletic"
         android:textColor="#FFFFFF"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imAvatar"
         app:layout_constraintEnd_toEndOf="@+id/imAvatar"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imAvatar" />
+        app:layout_constraintStart_toStartOf="@+id/imAvatar"
+        app:layout_constraintTop_toTopOf="@+id/imAvatar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,6 +81,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Date" />
+
+            <Button
+                android:id="@+id/btnUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Read" />
         </LinearLayout>
     </ScrollView>
 

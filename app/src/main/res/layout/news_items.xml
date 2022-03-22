@@ -37,10 +37,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvTest"
+            android:id="@+id/tvSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Source" />
     </LinearLayout>
 
     <LinearLayout

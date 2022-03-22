@@ -33,6 +33,7 @@ class NewsAdapter(mainActivity: MainActivity) : RecyclerView.Adapter<NewsAdapter
             .into(holder.binding.imAvatar)
         holder.binding.tvTitle.setText(newsList[position].title)
         holder.binding.tvDate.setText(DateFormatter.getDate(newsList[position].publishedAt))
+        holder.binding.tvSource.setText(newsList[position].source.name)
 
         holder.binding.newsCard.setOnClickListener {
             onItemClick.invoke(newsList[position])

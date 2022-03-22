@@ -1,5 +1,7 @@
 package ru.rykunov.rcview22byte
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -30,6 +32,10 @@ class NewsDetailsActivity : AppCompatActivity() {
             tvTitle.setText(title)
             tvDescription.setText(details)
             tvDate.setText(DateFormatter.getDate(date!!))
+            btnUrl.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }
             Glide.with(applicationContext)
                 .load(img)
                 .into(binding.imAvatar)
