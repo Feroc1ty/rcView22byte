@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.rykunov.rcview22byte.DateFormatter
 import ru.rykunov.rcview22byte.MainActivity
+import ru.rykunov.rcview22byte.R
 import ru.rykunov.rcview22byte.databinding.NewsItemsBinding
 import ru.rykunov.rcview22byte.pojo.News
 import java.text.SimpleDateFormat
@@ -28,9 +29,12 @@ class NewsAdapter(mainActivity: MainActivity) : RecyclerView.Adapter<NewsAdapter
 
     @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        Glide.with(holder.itemView)
-            .load(newsList[position].urlToImage)
-            .into(holder.binding.imAvatar)
+        if (newsList[position].urlToImage != null){
+            Glide.with(holder.itemView)
+                .load(newsList[position].urlToImage)
+                .into(holder.binding.imAvatar)
+        }
+        else holder.binding.imAvatar.setImageResource(R.drawable.img)
         holder.binding.tvTitle.setText(newsList[position].title)
         holder.binding.tvDate.setText(DateFormatter.getDate(newsList[position].publishedAt))
         holder.binding.tvSource.setText(newsList[position].source.name)
