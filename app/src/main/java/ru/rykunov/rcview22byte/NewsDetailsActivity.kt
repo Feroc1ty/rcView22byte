@@ -38,9 +38,12 @@ class NewsDetailsActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
             }
-            Glide.with(applicationContext)
-                .load(img)
-                .into(binding.imAvatar)
+            if (img != null){
+                Glide.with(applicationContext)
+                    .load(img)
+                    .into(binding.imAvatar)
+            }
+            else imAvatar.setImageResource(R.drawable.img)
         }
     }
 }

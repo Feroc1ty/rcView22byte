@@ -27,7 +27,6 @@ class NewsAdapter(mainActivity: MainActivity) : RecyclerView.Adapter<NewsAdapter
         return NewsViewHolder(NewsItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
-    @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         if (newsList[position].urlToImage != null){
             Glide.with(holder.itemView)
