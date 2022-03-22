@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import ru.rykunov.rcview22byte.databinding.ActivityNewsDetailsBinding
+import java.util.*
 
 class NewsDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNewsDetailsBinding
@@ -28,7 +29,7 @@ class NewsDetailsActivity : AppCompatActivity() {
         with(binding){
             tvTitle.setText(title)
             tvDescription.setText(details)
-            tvDate.setText(date)
+            tvDate.setText(DateFormatter.getDate(date!!))
             Glide.with(applicationContext)
                 .load(img)
                 .into(binding.imAvatar)

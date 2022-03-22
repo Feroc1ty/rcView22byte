@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import ru.rykunov.rcview22byte.DateFormatter
 import ru.rykunov.rcview22byte.MainActivity
 import ru.rykunov.rcview22byte.databinding.NewsItemsBinding
 import ru.rykunov.rcview22byte.pojo.News
@@ -31,12 +32,7 @@ class NewsAdapter(mainActivity: MainActivity) : RecyclerView.Adapter<NewsAdapter
             .load(newsList[position].urlToImage)
             .into(holder.binding.imAvatar)
         holder.binding.tvTitle.setText(newsList[position].title)
-
-        val dtStart = newsList[position].publishedAt
-        val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-        val date: Date = format.parse(dtStart)
-
-        holder.binding.tvDate.setText(date.toString())
+        holder.binding.tvDate.setText(DateFormatter.getDate(newsList[position].publishedAt))
 
         holder.binding.newsCard.setOnClickListener {
             onItemClick.invoke(newsList[position])
