@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(NEWS_DATE, news.publishedAt)
             intent.putExtra(NEWS_URL, news.url)
             intent.putExtra(NEWS_SOURCE, news.source.name)
+            intent.putExtra(NEWS_CONTENT, news.content)
             startActivity(intent)
         }
     }
@@ -72,5 +73,6 @@ class MainActivity : AppCompatActivity() {
         const val NEWS_DATE = "dateNews"
         const val NEWS_URL = "urlNews"
         const val NEWS_SOURCE = "sourceNews"
+        const val NEWS_CONTENT = "contentNews"
     }
 }

@@ -28,10 +28,12 @@ class NewsDetailsActivity : AppCompatActivity() {
         val img = intent.getStringExtra(MainActivity.NEWS_IMG)
         val date = intent.getStringExtra(MainActivity.NEWS_DATE)
         val source = intent.getStringExtra(MainActivity.NEWS_SOURCE)
+        val content = intent.getStringExtra(MainActivity.NEWS_CONTENT)
 
         with(binding){
             tvTitle.setText(title)
             tvDescription.setText(details)
+            tvContent.setText(content)
             tvDate.setText(DateFormatter.getDate(date!!))
             tvSource.setText(source)
             btnUrl.setOnClickListener {
